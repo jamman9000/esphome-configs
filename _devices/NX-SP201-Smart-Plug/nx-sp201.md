@@ -1,6 +1,6 @@
 ---
 title: NX-SP201
-date-published: 2020-05-1
+date-published: 2020-05-01
 type: plug
 standard: us
 ---
