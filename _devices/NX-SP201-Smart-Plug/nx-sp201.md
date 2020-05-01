@@ -4,34 +4,19 @@ date-published: 2020-05-1
 type: plug
 standard: us
 ---
-Energy monitoring, dual relay, tuya-based smart plug. Sold under various brand names. FCC-ID is [2AOPH-NX-SP201](https://fccid.io/2AOPH-NX-SP201/Internal-Photos/Internal-Photos-3733136)
 
-## GPIO Pinout
+![alt text](/assets/images/NX-SP201-Smart-Plug/IMG_0642.jpg "Closed Front View")
+![alt text](/assets/images/NX-SP201-Smart-Plug/IMG_0643.jpg "Opened Full View")
+![alt text](/assets/images/NX-SP201-Smart-Plug/IMG_0644.jpg "Opened Top 8266 Chip")
+![alt text](/assets/images/NX-SP201-Smart-Plug/IMG_0645.jpg "Opened Bottom 8266 Chip")
 
-| Pin     | Function                           |
-|---------|------------------------------------|
-| GPIO2   | Energy Monitoring SELi              |
-| GPIO4   | Energy Monitoring CF               |
-| GPIO5   | Energy Monitoring CF1              |
-| GPIO9   | Blue Status LEDs                   |
-| GPIO10  | Left Relay 1                       |
-| GPIO12  | Right Button 2                     |
-| GPIO13  | Right Relay 2                      |
-| GPIO14  | Left Button 1                      |
-
-
-## Basic Configuration
-
-```yaml
-# NX-SP201 Smart Plug-2 in 1, https://www.amazon.com/Slitinto-Individually-Monitoring-Required-Listed-1/dp/B07F71CH4B
-# https://fccid.io/2AOPH-NX-SP201
-# https://templates.blakadder.com/dilisens_NX-SP201.html
 substitutions:
   # Higher value gives lower watt readout
   current_res: "0.002452"
   # Lower value gives lower voltage readout
   voltage_div: "814"
 
+# Basic Config
 esphome:
   name: nx-sp201
   platform: ESP8266
@@ -74,7 +59,7 @@ binary_sensor:
     on_press:
         - switch.toggle: "nx-sp201_Relay2"
 
-# Status LED for blue lights
+# Status LED for blue light
 status_led:
     pin:
       number: GPIO09
@@ -124,5 +109,3 @@ sensor:
       unit_of_measurement: W
       id: "nx-sp201_Wattage"
       accuracy_decimals: 0
-```
-
