@@ -10,6 +10,7 @@ standard: us
 ![alt text](/assets/images/NX-SP201-Smart-Plug/IMG_0644.jpg "Opened Top 8266 Chip")
 ![alt text](/assets/images/NX-SP201-Smart-Plug/IMG_0645.jpg "Opened Bottom 8266 Chip")
 
+```yaml
 substitutions:
   # Higher value gives lower watt readout
   current_res: "0.002452"
@@ -109,3 +110,4 @@ sensor:
       unit_of_measurement: W
       id: "nx-sp201_Wattage"
       accuracy_decimals: 0
+```
